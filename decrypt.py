@@ -2,18 +2,18 @@
 
 import random, time
 
-#A basic encryption algorithm...
+#A basic decryption algorithm...
 def decrypt(ciphertext, key):
-    alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    return ciphertext[::key+1]
     
-    current_index = 0
-    plaintext = ciphertext[current_index]
-    current_index = current_index + key + 1
-    while current_index < len(ciphertext):
-      plaintext += ciphertext[current_index]
-      current_index = current_index + key + 1
+    # current_index = 0
+    # plaintext = ciphertext[current_index]
+    # current_index = current_index + key + 1
+    # while current_index < len(ciphertext):
+      # plaintext += ciphertext[current_index]
+      # current_index = current_index + key + 1
       
-    return ciphertext
+    # return ciphertext
  
  
 #Main program starts here...
