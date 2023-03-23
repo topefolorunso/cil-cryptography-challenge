@@ -43,9 +43,9 @@ def run_program():
     #Output...
     print(f"Plaintext: {plaintext}")
     
-    decrypt_more_ciphertext()
+    decrypt_more_ciphertext_or_exit()
     
-def decrypt_more_ciphertext():
+def decrypt_more_ciphertext_or_exit():
     more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ").lower()
     while more_input not in ("yes", "y", "no", "n"):
         print("Invalid response, try again!")
