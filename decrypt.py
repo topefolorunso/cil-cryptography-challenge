@@ -14,14 +14,14 @@ def decrypt(ciphertext, key):
     print("...")
     time.sleep(1)
 
-    return ciphertext[::key+1]
+    return plaintext
 
     # current_index = 0
     # plaintext = ciphertext[current_index]
     # current_index = current_index + key + 1
     # while current_index < len(ciphertext):
-      # plaintext += ciphertext[current_index]
-      # current_index = current_index + key + 1
+    #   plaintext += ciphertext[current_index]
+    #   current_index = current_index + key + 1
       
     # return plaintext
 
@@ -46,11 +46,10 @@ def run_program():
     decrypt_more_ciphertext()
     
 def decrypt_more_ciphertext():
-    more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ")
-    more_input = more_input.lower()
+    more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ").lower()
     while more_input not in ("yes", "y", "no", "n"):
         print("Invalid response, try again!")
-        more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ")
+        more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ").lower()
     if more_input in ("yes", "y"):
         run_program()
     elif more_input in ("no", "n"):
