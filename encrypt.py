@@ -1,4 +1,3 @@
-Code 
 #Cryptography Challenge #1
 
 import random, time
