@@ -4,8 +4,18 @@ import random, time
 
 #A basic decryption algorithm...
 def decrypt(ciphertext, key):
-    return ciphertext[::key+1]
+    print("...")
+    time.sleep(1)
     
+    print("Decrypting ciphertext...")
+    plaintext = ciphertext[::key+1]
+    time.sleep(1)
+    
+    print("...")
+    time.sleep(1)
+
+    return ciphertext[::key+1]
+
     # current_index = 0
     # plaintext = ciphertext[current_index]
     # current_index = current_index + key + 1
@@ -13,31 +23,37 @@ def decrypt(ciphertext, key):
       # plaintext += ciphertext[current_index]
       # current_index = current_index + key + 1
       
-    # return ciphertext
- 
+    # return plaintext
+
+def get_input():
+    ciphertext = input("Enter a message to decrypt (ciphertext)")
+    key = int(input("Input a key as a number between 1 and 10"))
+    while not (key>=1 and key<=10):
+        print("Invalid key, try again!")
+        key = int(input("Input a key as a number between 1 and 10"))
+        
+    return ciphertext, key
  
 #Main program starts here...
+def run_program():
+    #Input...
+    ciphertext, key = get_input()
+    #Process...
+    plaintext = decrypt(ciphertext, key)
+    #Output...
+    print("Plaintext:")
+    print(plaintext)
+    
+    decrypt_more_ciphertext()
+    
+def decrypt_more_ciphertext():
+    more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ")
+    while more_input not in ("yes", "y", "no", "n"):
+        print("Invalid response, try again!")
+        more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ")
+    if more_input.lower() in ("yes", "y"):
+        run_program()
+    elif more_input.lower() in ("no", "n"):
+        print("Thank you for using Tope's decryption program!")
 
-#Input...
-ciphertext = input("Enter a message to decrypt (ciphertext)")
-key = int(input("Input a key as a number between 1 and 10"))
-
-while not (key>=1 and key<=10):
-    print("Invalid key, try again!")
-    key = int(input("Input a key as a number between 1 and 10"))
-
-#Process... 
-print("...")
-time.sleep(1)
-
-print("Decrypting ciphertext...")
-time.sleep(1)
-
-print("...")
-time.sleep(1)
-
-plaintext = decrypt(ciphertext, key)
-
-#Output...
-print("Plaintext:")
-print(plaintext)
+run_program()
