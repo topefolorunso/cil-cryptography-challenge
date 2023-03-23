@@ -47,13 +47,13 @@ def run_program():
     decrypt_more_ciphertext()
     
 def decrypt_more_ciphertext():
-    more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ")
+    more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ").lower()
     while more_input not in ("yes", "y", "no", "n"):
         print("Invalid response, try again!")
         more_input = input("Do you have more ciphertext to decrypt? Yes/No (Y/N): ")
-    if more_input.lower() in ("yes", "y"):
+    if more_input in ("yes", "y"):
         run_program()
-    elif more_input.lower() in ("no", "n"):
+    elif more_input in ("no", "n"):
         print("Thank you for using Tope's decryption program!")
 
 run_program()
