@@ -26,11 +26,11 @@ def decrypt(ciphertext, key):
     # return plaintext
 
 def get_input():
-    ciphertext = input("Enter a message to decrypt (ciphertext)")
-    key = int(input("Input a key as a number between 1 and 10"))
+    ciphertext = input("Enter a message to decrypt (ciphertext): ")
+    key = int(input("Input a key as a number between 1 and 10: "))
     while not (key>=1 and key<=10):
         print("Invalid key, try again!")
-        key = int(input("Input a key as a number between 1 and 10"))
+        key = int(input("Input a key as a number between 1 and 10: "))
         
     return ciphertext, key
  
@@ -41,8 +41,7 @@ def run_program():
     #Process...
     plaintext = decrypt(ciphertext, key)
     #Output...
-    print("Plaintext:")
-    print(plaintext)
+    print(f"Plaintext: {plaintext}")
     
     decrypt_more_ciphertext()
     
