@@ -7,13 +7,14 @@ def encrypt(plaintext, key):
     alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     ciphertext = ""
     
-    for i in range(0,len(plaintext)):
+    for i in range(0, len(plaintext)):
         character = plaintext[i]
         ciphertext = ciphertext + character
 
-    for j in range (0,key):
-        ciphertext = ciphertext + random.choice(alphabet)
-        return ciphertext
+        for j in range (0, key):
+            ciphertext = ciphertext + random.choice(alphabet)
+
+    return ciphertext
  
  
 #Main program starts here...

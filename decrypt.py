@@ -54,5 +54,6 @@ def decrypt_more_ciphertext_or_exit():
         run_program()
     elif more_input in ("no", "n"):
         print("Thank you for using Tope's decryption program!")
+        exit()
 
 run_program()
